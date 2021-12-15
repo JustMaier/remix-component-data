@@ -2,6 +2,7 @@ import { LoaderFunction } from 'remix'
 import { useComponentData } from './ComponentData'
 
 export let loader: LoaderFunction = async () => {
+  console.log('running loader widget 3');
   throw new Error('Oops! from widget3 loader')
 }
 

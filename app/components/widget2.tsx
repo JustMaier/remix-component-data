@@ -2,6 +2,7 @@ import { json, LoaderFunction } from 'remix'
 import { useComponentData, useComponentCatch } from './ComponentData'
 
 export let loader: LoaderFunction = async () => {
+  console.log('running loader widget 2');
   throw new Response('Bad Request', { status: 400 })
 }
 

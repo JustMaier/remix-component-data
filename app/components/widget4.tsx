@@ -14,6 +14,7 @@ export let loader: LoaderFunction = async ({ request, componentParams }) => {
   const session = await getSession(request.headers.get('Cookie'))
   const { postId } = componentParams
   const isLiked = session.has(`liked-${postId}`)
+  console.log('running loader widget 4');
   return json({
     postId,
     isLiked,

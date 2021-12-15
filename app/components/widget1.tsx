@@ -2,6 +2,7 @@
 import { json, LoaderFunction } from 'remix'
 import { useComponentData, useComponentCatch } from './ComponentData'
 import { getSession } from '~/sessions'
+import { sleep } from '~/utils/sleep'
 
 type LoaderData = {
   message: string
@@ -12,6 +13,9 @@ export let loader: LoaderFunction = async ({ request }) => {
     key.startsWith('liked-'),
   ).length
 
+  console.log('running loader widget 1');
+  await sleep(5000);
+  console.log('widget 1 ready');
   return json({ message: 'Hello from Widget 1', likeCount })
 }
 
